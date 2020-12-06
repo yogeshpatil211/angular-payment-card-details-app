@@ -1,0 +1,77 @@
+
+<div class="container">
+  <h3 class="text-center mt-2">Add Card Details</h3>
+  <div class="content">
+    <form [formGroup]="creditCardDetailsForm">
+
+      <div class="form-group">
+        <label for="creditCardNumber">Credit Card Number</label>
+        <input type="text" class="form-control" id="creditCardNumber" placeholder="Enter Credit Card Number"
+          formControlName="creditCardNumber"
+          [ngClass]="{'is-invalid': !getControl('creditCardNumber')?.valid && getControl('creditCardNumber')?.touched}">
+
+        <span class="error-message" *ngIf="!getControl('creditCardNumber')?.valid && getControl('creditCardNumber')?.touched">
+          Please Enter Credit Card Number
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="cardHolder">Card Holder</label>
+        <input type="text" class="form-control" id="cardHolder" placeholder="Enter Card Holder" formControlName="cardHolder"
+          [ngClass]="{'is-invalid': !getControl('cardHolder')?.valid && getControl('cardHolder')?.touched}">
+
+        <span class="error-message" *ngIf="!getControl('cardHolder')?.valid && getControl('cardHolder')?.touched">
+          Please Enter Card Holder
+        </span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-8 mb-0">
+          <label for="">Expiration Date</label>
+          <mat-form-field appearance="fill" class="d-block">
+            <mat-label>Month and Year</mat-label>
+            <input matInput [matDatepicker]="dp" name="datepicker" [min]="minDate" [max]="maxDate" formControlName="expiryDate">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp
+                            startView="multi-year"
+                            (yearSelected)="chosenYearHandler($event)"
+                            (monthSelected)="chosenMonthHandler($event, dp)"
+                            panelClass="example-month-picker">
+            </mat-datepicker>
+          </mat-form-field>
+
+          <span class="error-message" *ngIf="!getControl('expiryDate')?.valid && getControl('expiryDate')?.touched">
+            Please Enter Expiration Date
+          </span>
+        </div>
+
+        <div class="form-group col-md-4 mb-0">
+          <label for="cvv">CVV</label>
+          <input type="text" class="form-control cvv-input" id="cvv" placeholder="Enter CVV" formControlName="securityCode"
+            [maxLength]="3">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter Amount" formControlName="amount"
+          [ngClass]="{'is-invalid': !getControl('amount')?.valid && getControl('amount')?.touched}">
+        <span class="error-message" *ngIf="getControl('amount')?.errors?.required && getControl('amount')?.touched">
+          Please Enter Amount
+        </span>
+        <span class="error-message" *ngIf="getControl('amount')?.errors?.min && getControl('amount')?.touched">
+          Please Enter Amount Greater Than Zero
+        </span>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-outline-danger mr-2" (click)="onCancel()">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-success" (click)="onSaveDetails()">
+          Add Details
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

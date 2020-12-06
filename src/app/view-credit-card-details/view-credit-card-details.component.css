@@ -1,0 +1,18 @@
+.credit-card {
+  max-width: 25rem;
+  min-height: 15rem;
+  border-radius: 15px;
+  background-color: black;
+}
+.card-title {
+  font-style: italic;
+  text-align: right;
+}
+
+.card-width {
+  width: 67% !important;
+}
+
+.text-small {
+  font-size: 13px;
+}

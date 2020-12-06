@@ -1,0 +1,17 @@
+
+.footer{
+  background-color: #9198a0;
+}
+
+.content-height {
+  min-height: 100%;
+}
+
+.content-height:after {
+  content: "";
+  display: block;
+}
+
+.footer, .content-height:after {
+  height: 90px;
+}

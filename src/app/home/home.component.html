@@ -1,0 +1,6 @@
+<div class="container mt-4 content-width">
+  <app-view-card-details [cardDetails]="cardDetails"></app-view-card-details>
+  <div class="text-center">
+    <button class="btn btn-outline-info" (click)="onAddCreditCard()">{{cardDetails ? 'Edit Card Details' : 'Add Card Details'}}</button>
+  </div>
+</div>

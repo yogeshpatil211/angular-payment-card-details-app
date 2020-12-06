@@ -1,0 +1,24 @@
+<div class="card text-white mb-3 credit-card">
+  <div class="card-body">
+    <h3 class="card-title">VISA</h3>
+    <div class="ml-3">
+      <h4>{{cardDetails?.creditCardNumber || '---- '.repeat(4)}}</h4>
+      <span class="text-small">Card Holder</span>
+      <h5>{{cardDetails?.cardHolder || '-'}}</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <span class="text-small">Expiry</span>
+          <h5>{{cardDetails?.expiryDate || '-/-'}}</h5>
+        </div>
+        <div class="col-md-6">
+          <span class="text-small">CVV</span>
+          <h5>{{cardDetails?.securityCode || '---'}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!cardDetails" class="text-center">
+  <p class="text-danger">Please Add Credit Card Details</p>
+</div>

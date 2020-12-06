@@ -1,0 +1,35 @@
+.alert-top {
+  position: fixed;
+  width: 100%;
+  height: 57px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.alert-success {
+  background-color: #31a979;
+}
+
+.alert-error {
+  background-color: #d7494d;
+}
+
+.alert-panel {
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  width: 100%;
+  /* background: white; */
+  color: white;
+  padding: 1rem;
+  height: 50px;
+}
+
+.close-icon {
+  position: absolute !important;
+  right: 25px;
+  cursor: pointer;
+}

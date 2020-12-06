@@ -1,0 +1,9 @@
+<div class="alert-top" *ngIf="toastMessageDetails$ | async as messageDetails"
+  [ngClass]="{'alert-success': messageDetails.type === messageType.SUCCESS,
+    'alert-error': messageDetails.type === messageType.ERROR}">
+  <div class="alert-panel text-center">
+    <fa-icon [icon]="successIcon" class="mr-1"></fa-icon>
+    <span class="">{{messageDetails.message}}</span>
+    <fa-icon [icon]="closeIcon" class="close-icon" (click)="closeToastMessage()"></fa-icon>
+  </div>
+</div>

@@ -16,7 +16,21 @@ Run ng serve for a dev server. Navigate to http://localhost:4200/. you will see 
 
 # Screenshots for reference
 
+### Home Page
 ![Alt text](./src/assets/home_without_card_details.png?raw=true "Home")
+
+### Add Card Details Page
+![Alt text](./src/assets/add_card_details.png?raw=true "Home")
+
+### Add Card Details Page With Success Toast Notification
+![Alt text](./src/assets/add-card-details-with-success-toast.png?raw=true "Home")
+
+### Add Card Details Page With Error Toast Notification
+![Alt text](./src/assets/add-card-details-with-error-toast.png?raw=true "Home")
+
+### Home Page With Card Details Added
+![Alt text](./src/assets/home_with_card_details.png?raw=true "Home")
+
 
 # PaymentDetailsApp
 

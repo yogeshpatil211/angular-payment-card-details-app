@@ -9,11 +9,11 @@ import { Observable } from 'rxjs/internal/Observable';
 export class CardDetailsResolverService implements Resolve<any>{
 
   constructor(
-    private _cardDetailsService: CardDetailsService
+    private cardDetailsService: CardDetailsService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this._cardDetailsService.getCardDetails().pipe(
+    return this.cardDetailsService.getCardDetails().pipe(
       map((res) => res),
       catchError((error) => {
         return of(null);

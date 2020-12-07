@@ -59,7 +59,6 @@ export class AddCreditCardDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.createCreditCardDetailsForm();
     this.prevAddedCardDetails();
-    this.formValueChanges();
   }
 
   prevAddedCardDetails(): void {
@@ -89,12 +88,6 @@ export class AddCreditCardDetailsComponent implements OnInit {
     });
   }
 
-  formValueChanges(): void {
-    this.creditCardDetailsForm.valueChanges.subscribe(
-      (res) => console.log(this.creditCardDetailsForm)
-    );
-  }
-
   getControl(controlName: string): AbstractControl | null {
     return this.creditCardDetailsForm.get(controlName) || null;
   }
@@ -115,7 +108,6 @@ export class AddCreditCardDetailsComponent implements OnInit {
 
   onSaveDetails(): void {
     if (this.creditCardDetailsForm.valid) {
-      // const cardDetails = {...this.creditCardDetailsForm.value, expiryDate: JSON.stringify(this.creditCardDetailsForm.value.expiryDate)};
       this.cardDetailsService.saveCardDetails(this.creditCardDetailsForm.value).pipe(take(1))
         .subscribe(
           () => {

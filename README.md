@@ -1,3 +1,7 @@
+# Payment Card Details App
+
+![Alt text](./src/assets/home_without_card_details.png?raw=true "Home")
+
 # PaymentDetailsApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
